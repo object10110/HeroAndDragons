@@ -1,0 +1,83 @@
+﻿@model DragonViewModel
+
+<form method="post" action="/finddragon">
+    <div class="">
+        <input class="btn btn-default find-dragon" type="submit" value="НАЙТИ ДРАКОНА"/>
+    </div>
+</form>
+
+<form method="get">
+    <div class="form-inline">
+        <label class="control-label">Имя: </label>
+        @Html.TextBox("name", Model.FilterViewModel.SelectedName, htmlAttributes: new { @class = "form-control" })
+        <br/>
+        <label class="control-label">Текущие жизни ОТ:</label>
+        <input class="form-control" type="number" min="0" value="@Model.FilterViewModel.SelectedMinCurrentHealth" name="minCurHealth" />
+        <label class="control-label">ДО:</label>
+        <input class="form-control" type="number" value="@Model.FilterViewModel.SelectedMaxCurrentHealth" name="maxCurHealth" />
+        <br />
+        <label class="control-label">Изначальные жизни ОТ:</label>
+        <input class="form-control" type="number" min="0" value="@Model.FilterViewModel.SelectedMinHealth" name="minHealth" />
+        <label class="control-label">ДО:</label>
+        <input class="form-control" type="number" value="@Model.FilterViewModel.SelectedMaxHealth" name="maxHealth" />
+        <br />
+        <input type="submit" value="Фильтровать" class="btn btn-default" />
+    </div>
+</form>
+
+<table class="table">
+    <tr>
+        <th>
+            <span>Id</span>
+        </th>
+        <th>
+            <a asp-action="Dragons"
+               asp-route-sortOrder="@(Model.SortViewModel.NameSort)"
+               asp-route-minCurHealth="@(Model.FilterViewModel.SelectedMinCurrentHealth)"
+               asp-route-maxCurHeatth="@(Model.FilterViewModel.SelectedMaxCurrentHealth)"
+               asp-route-minHealth="@(Model.FilterViewModel.SelectedMinHealth)"
+               asp-route-maxHeatth="@(Model.FilterViewModel.SelectedMaxHealth)"
+               asp-route-name="@(Model.FilterViewModel.SelectedName)">Имя</a>
+        </th>
+        <th>
+            <span>Текущие жизни</span>
+        </th>
+        <th>
+            <span>Изначальные жизни</span>
+        </th>
+    </tr>
+    @foreach (DragonInfoModel u in Model.Dragons)
+    {
+        <tr><td>@u.Id</td><td>@u.Name</td><td>@u.CurrentHealth</td><td>@u.AllHealth</td><td><a href="/attack?dragonId=@(u.Id)" class="attack-dragon">НАПАСТЬ</a></td></tr>
+    }
+</table>
+@if (Model.PageViewModel.HasPreviousPage)
+{
+    <a asp-action="Heroes"
+       asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
+       asp-route-name="@(Model.FilterViewModel.SelectedName)"
+       asp-route-minCurHealth="@(Model.FilterViewModel.SelectedMinCurrentHealth)"
+       asp-route-maxCurHeatth="@(Model.FilterViewModel.SelectedMaxCurrentHealth)"
+       asp-route-minHealth="@(Model.FilterViewModel.SelectedMinHealth)"
+       asp-route-maxHeatth="@(Model.FilterViewModel.SelectedMaxHealth)"
+       asp-route-sortorder="@(Model.SortViewModel.Current)"
+       class="btn btn-default btn">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+        Назад
+    </a>
+}
+@if (Model.PageViewModel.HasNextPage)
+{
+    <a asp-action="Heroes"
+       asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
+       asp-route-name="@(Model.FilterViewModel.SelectedName)"
+       asp-route-minCurHealth="@(Model.FilterViewModel.SelectedMinCurrentHealth)"
+       asp-route-maxCurHeatth="@(Model.FilterViewModel.SelectedMaxCurrentHealth)"
+       asp-route-minHealth="@(Model.FilterViewModel.SelectedMinHealth)"
+       asp-route-maxHeatth="@(Model.FilterViewModel.SelectedMaxHealth)"
+       asp-route-sortorder="@(Model.SortViewModel.Current)"
+       class="btn btn-default btn">
+        Вперед
+        <i class="glyphicon glyphicon-chevron-right"></i>
+    </a>
+}

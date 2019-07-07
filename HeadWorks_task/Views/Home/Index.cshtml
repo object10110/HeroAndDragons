@@ -1,0 +1,36 @@
+﻿@*@model IEnumerable<HeadWorks_task.Models.Hero>*@
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Heroes and Dragons";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="login-page">
+            <h1>Heroes and Dragons</h1>
+            <form method="post" id="form-login">
+                <div class="wrap-login">
+                    <label class="md-input-label">Введите имя героя</label>
+                    <input required="" autocomplete="username" class="input-login" name="username" type="text">
+                </div>
+                <div class="btn-login">
+                    <input type="submit" value="НАЧАТЬ">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+<script async src="~/js/site.js"></script>

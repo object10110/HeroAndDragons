@@ -1,0 +1,41 @@
+﻿@model DragonViewModel
+
+<table class="table">
+    <tr>
+        <th>
+            <span>Id</span>
+        </th>
+        <th>
+            <a asp-action="Stat"
+               asp-route-sortOrder="@(Model.SortViewModel.NameSort)">Имя</a>
+        </th>
+        <th>
+            <a asp-action="Stat"
+               asp-route-sortOrder="@(Model.SortViewModel.DamageSort)">Количество урона</a>
+        </th>
+    </tr>
+    @foreach (DragonInfoModel u in Model.Dragons)
+    {
+        <tr><td>@u.Id</td><td>@u.Name</td><td>@u.AmountHeroDamageForThisDragon</td></tr>
+    }
+</table>
+@if (Model.PageViewModel.HasPreviousPage)
+{
+    <a asp-action="Heroes"
+       asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
+       asp-route-sortorder="@(Model.SortViewModel.Current)"
+       class="btn btn-default btn">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+        Назад
+    </a>
+}
+@if (Model.PageViewModel.HasNextPage)
+{
+    <a asp-action="Heroes"
+       asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
+       asp-route-sortorder="@(Model.SortViewModel.Current)"
+       class="btn btn-default btn">
+        Вперед
+        <i class="glyphicon glyphicon-chevron-right"></i>
+    </a>
+}

@@ -1,0 +1,43 @@
+﻿@model DragonInfoModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="attack-img-container">
+            <img src="~/images/attack.png" class="attack-img" />
+            <span class="dragon-id">@Model.Id</span>
+            <span class="dragon-name">@Model.Name</span>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="@Model.CurrentHealth"
+                 aria-valuemin="0" aria-valuemax="@Model.AllHealth" style="width:@((int)((float)(@Model.CurrentHealth) / Model.AllHealth * 100))%">
+                @Model.CurrentHealth HP
+            </div>
+        </div>
+        <div class="current-damage-container">
+            <span class="hide current-damage">урон:@(ViewData["damage"] ?? "")</span>
+        </div>
+        <div class="attack-panel">
+            <a href="/dragons" class="run-away-btn">< СБЕЖАТЬ</a>
+            <input type="button" class="attack-btn" value="АТАКОВАТЬ"/>
+        </div>
+    </div>
+</body>
+</html>
+<script async src="~/js/site.js"></script>

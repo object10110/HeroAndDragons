@@ -1,0 +1,9 @@
+C:\Users\User\Documents\Visual Studio 2017\Projects\HeadWorks_task\ViewToStringLibrary\bin\Debug\netcoreapp2.1\ViewToStringLibrary.deps.json
+C:\Users\User\Documents\Visual Studio 2017\Projects\HeadWorks_task\ViewToStringLibrary\bin\Debug\netcoreapp2.1\ViewToStringLibrary.dll
+C:\Users\User\Documents\Visual Studio 2017\Projects\HeadWorks_task\ViewToStringLibrary\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+C:\Users\User\Documents\Visual Studio 2017\Projects\HeadWorks_task\ViewToStringLibrary\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Mvc.ViewFeatures.xml
+C:\Users\User\Documents\Visual Studio 2017\Projects\HeadWorks_task\ViewToStringLibrary\obj\Debug\netcoreapp2.1\ViewToStringLibrary.csprojAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2017\Projects\HeadWorks_task\ViewToStringLibrary\obj\Debug\netcoreapp2.1\ViewToStringLibrary.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\Visual Studio 2017\Projects\HeadWorks_task\ViewToStringLibrary\obj\Debug\netcoreapp2.1\ViewToStringLibrary.AssemblyInfoInputs.cache
+C:\Users\User\Documents\Visual Studio 2017\Projects\HeadWorks_task\ViewToStringLibrary\obj\Debug\netcoreapp2.1\ViewToStringLibrary.AssemblyInfo.cs
+C:\Users\User\Documents\Visual Studio 2017\Projects\HeadWorks_task\ViewToStringLibrary\obj\Debug\netcoreapp2.1\ViewToStringLibrary.csproj.CopyComplete

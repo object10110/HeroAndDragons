@@ -1,0 +1,65 @@
+﻿@model HeroesViewModel
+<form method="get">
+    <div class="form-inline">
+        <label class="control-label">Имя: </label>
+        @Html.TextBox("name", Model.FilterViewModel.SelectedName, htmlAttributes: new { @class = "form-control" })
+        <br/>
+        <label class="control-label">Дата создания ОТ:</label>
+        <input class="form-control" type="datetime-local" value="@Model.FilterViewModel.SelectedStartTime.ToString("yyyy-MM-ddTHH:mm")" name="startTime" />
+        <label class="control-label">ДО:</label>
+        <input class="form-control" type="datetime-local" value="@Model.FilterViewModel.SelectedFinishTime.ToString("yyyy-MM-ddTHH:mm")" name="finishTime" />
+        <br />
+        <input type="submit" value="Фильтровать" class="btn btn-default" />
+    </div>
+</form>
+
+<table class="table">
+    <tr>
+        <th>
+            <span>Id</span>
+        </th>
+        <th>
+            <a asp-action="Heroes"
+               asp-route-sortOrder="@(Model.SortViewModel.NameSort)"
+               asp-route-startTime="@(Model.FilterViewModel.SelectedStartTime)"
+               asp-route-finishTime="@(Model.FilterViewModel.SelectedFinishTime)"
+               asp-route-name="@(Model.FilterViewModel.SelectedName)">Имя</a>
+        </th>
+        <th>
+            <span>Дата создания</span>
+        </th>
+        <th>
+            <span>Оружие</span>
+        </th>
+    </tr>
+    @foreach (Hero u in Model.Heroes)
+    {
+        <tr><td>@u.Id</td><td>@u.Name</td><td>@u.CreationTime</td><td>@u.Weapon</td></tr>
+    }
+</table>
+@if (Model.PageViewModel.HasPreviousPage)
+{
+    <a asp-action="Heroes"
+       asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
+       asp-route-name="@(Model.FilterViewModel.SelectedName)"
+       asp-route-startTime="@(Model.FilterViewModel.SelectedStartTime)"
+       asp-route-finishTime="@(Model.FilterViewModel.SelectedFinishTime)"
+       asp-route-sortorder="@(Model.SortViewModel.Current)"
+       class="btn btn-default btn">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+        Назад
+    </a>
+}
+@if (Model.PageViewModel.HasNextPage)
+{
+    <a asp-action="Heroes"
+       asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
+       asp-route-name="@(Model.FilterViewModel.SelectedName)"
+       asp-route-startTime="@(Model.FilterViewModel.SelectedStartTime)"
+       asp-route-finishTime="@(Model.FilterViewModel.SelectedFinishTime)"
+       asp-route-sortorder="@(Model.SortViewModel.Current)"
+       class="btn btn-default btn">
+        Вперед
+        <i class="glyphicon glyphicon-chevron-right"></i>
+    </a>
+}

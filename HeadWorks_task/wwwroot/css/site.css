@@ -1,0 +1,165 @@
+﻿
+body {
+    display: flex;
+    width: 1024px;
+    margin: auto;
+    flex-direction: column;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.login-page {
+    background: lightgrey;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 15%;
+}
+
+.top-menu {
+    display: flex;
+    border-bottom: 3px solid #00000017;
+}
+
+.menu-hero {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    border-right: 3px solid #e8e8e8;
+    background-color: dimgrey;
+    color: white;
+}
+
+.menu-a {
+    display: flex;
+    margin: auto;
+    font-size: 24px;
+    text-decoration: none;
+    outline: none;
+    color: black;
+    padding: 0px 20px;
+}
+.menu-a:hover{
+    text-decoration:none;
+}
+.hero-info {
+    display: flex;
+    flex-direction: column;
+}
+
+    .hero-info.skills-name {
+        padding-right: 5px;
+        color: lightgray;
+    }
+
+.btn-login {
+    margin-top: 5px;
+}
+
+    .btn-login input[type="submit"] {
+         width: 100%;
+    }
+table.table {
+    margin-top: 10px;
+}
+a:hover{
+    text-decoration:none;
+}
+input.btn.btn-default.find-dragon {
+    width: 100%;
+    margin: 20px 5px 20px 0px;
+    height: 50px;
+    background-color: darkorange;
+    color: white;
+    font-size: 24px;
+}
+.form-inline {
+    margin-bottom: 20px;
+    background: #d3d3d347;
+    padding: 10px;
+    border: 3px solid #1010100f;
+}
+a.attack-dragon {
+    background-color: red;
+    display: block;
+    padding: 2px;
+    text-align: center;
+    color: white;
+}
+input#name {
+    margin-bottom: 10px;
+}
+.container.body-content {
+    width: 100%;
+}
+input.form-control {
+    margin-bottom: 10px;
+}
+.progress{
+    width:100%;
+}
+.attack-img-container {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dragon-name {
+    color: darkred;
+    font-size: 36px;
+}
+.attack-btn {
+    color: white;
+    background-color: red;
+    border: none;
+    margin: 10px;
+    height: 40px;
+    width: 150px;
+}
+.run-away-btn {
+    padding-right: 20px;
+    font-size: 15px;
+}
+h2 {
+    text-align: center;
+    font-size: 48px;
+    color: darkgoldenrod;
+}
+.dragon-id{
+    display:none;
+}
+.hide{
+    display:none;
+}
+.win-contant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20%;
+    background-color: lightgreen;
+    padding: 30px;
+    color: white;
+    font-size: 25px;
+}
+.win-ok-btn {
+    color: green;
+    margin-top: 20px;
+    background-color: white;
+    padding: 5px 30px 5px 30px;
+}
+.current-damage {
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+}
+@media screen and (max-width: 1000px) {
+    body{
+    width: 100%;
+    min-width:600px;
+}
+}
+
