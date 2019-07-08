@@ -12540,11 +12540,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\Visual Studio 2017\\Projects\\HeadWorks_task\\HeadWorks_task\\HeadWorks_task.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\Visual Studio 2017\\Projects\\HeadWorks_task\\HeroAndDragons\\HeadWorks_task\\HeadWorks_task.csproj",
       "projectName": "HeadWorks_task",
-      "projectPath": "C:\\Users\\User\\Documents\\Visual Studio 2017\\Projects\\HeadWorks_task\\HeadWorks_task\\HeadWorks_task.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\Visual Studio 2017\\Projects\\HeadWorks_task\\HeroAndDragons\\HeadWorks_task\\HeadWorks_task.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\Visual Studio 2017\\Projects\\HeadWorks_task\\HeadWorks_task\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\Visual Studio 2017\\Projects\\HeadWorks_task\\HeroAndDragons\\HeadWorks_task\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -4,13 +4,13 @@
     $("#form-login").submit(function (e) {
         e.preventDefault();
         let formAction = "/home/login";
-        let cookiHoursTime = 1;
+        let cookiHoursTime = 24;//время жизни куки
         let fdata = new FormData();
         let username = $(".input-login").val();
 
         fdata.append("username", username);
 
-        $(".btn-login").attr("disabled", "disabled");
+        $(".btn-login > input").attr("disabled", "disabled");
 
         $.ajax({
             type: 'post',
@@ -31,10 +31,10 @@
                 }
                 case "error": {
                     alert(result.message);
+                    $(".btn-login > input").removeAttr("disabled");
                     break;
                 }
             }
-            $(".btn-login").removeAttr("disabled");
         });
     });
     $(".attack-btn").click(function (e) {
