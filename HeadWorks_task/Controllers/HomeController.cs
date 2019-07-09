@@ -167,7 +167,7 @@ namespace HeadWorks_task.Controllers
                 {
                     dragons = dragons.Where(p => p.Name.ToLower().StartsWith(name.ToLower()));//если имя начинается с указаной строки БЕЗ учета регистра
                 }
-                dragons = dragons.Where(d => d.CurrentHealth >= minCurHealth && d.CurrentHealth < maxCurHealth);//текущие жизни //>= для того, чтобы подпадали жизни равные 0
+                dragons = dragons.Where(d => d.CurrentHealth > minCurHealth && d.CurrentHealth < maxCurHealth);//текущие жизни
                 dragons = dragons.Where(d => d.AllHealth > minHealth && d.CurrentHealth < maxHealth);//начальные жизни
                 // сортировка
                 switch (sortOrder)
